@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Validate EU Combined Nomenclature (CN) codes and review migration candidates from 2026 to 2027. Documentation and public Postman collection.">
+  <meta name="theme-color" content="#0b1527">
+  <title>EU CN Code Migration API | 2026 → 2027</title>
+  <style>
+    :root{color-scheme:dark;--bg:#08111f;--panel:#101f34;--line:#263b55;--text:#edf5ff;--muted:#b2c2d7;--blue:#74b7ff;--teal:#63e5c6}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(ellipse at 78% 0%,#193557 0%,var(--bg) 44%);color:var(--text);line-height:1.65}
+    a{color:var(--blue)}a:hover{color:#b9dcff}.wrap{width:min(1060px,calc(100% - 38px));margin:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+    .brand{font-size:1rem;font-weight:800;letter-spacing:.02em;color:var(--text);text-decoration:none}.navlinks{display:flex;gap:20px;flex-wrap:wrap}.navlinks a{color:var(--muted);text-decoration:none;font-size:.94rem}
+    .hero{padding:85px 0 62px}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.77rem;color:var(--teal);font-weight:800}h1{font-size:clamp(2.25rem,5vw,4.15rem);line-height:1.12;letter-spacing:-.045em;margin:16px 0 22px;max-width:850px}
+    .lead{font-size:1.17rem;color:var(--muted);max-width:750px}.buttons{display:flex;flex-wrap:wrap;gap:13px;margin:28px 0 14px}
+    .btn{border-radius:9px;padding:13px 19px;font-weight:750;text-decoration:none;border:1px solid var(--line);display:inline-block}.btn.primary{background:var(--teal);color:#0a1826;border:1px solid var(--teal)}.btn.secondary{color:var(--text);background:#15263c}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{border:1px solid var(--line);background:rgba(16,31,52,.83);border-radius:15px;padding:24px}.card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted)}
+    section{padding:31px 0}h2{font-size:1.7rem;letter-spacing:-.02em;margin:0 0 15px}.sub{color:var(--muted);margin:0 0 22px}
+    .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.number{display:inline-block;color:#07131f;background:var(--teal);border-radius:7px;padding:2px 9px;font-weight:900;margin-bottom:12px}
+    .run{background:#f5f8fc;border-radius:14px;padding:25px;color:#152434;max-width:800px}.run h3{margin:0 0 8px}.run p{color:#45596c}
+    pre{overflow-x:auto;background:#071321;color:#d9e9ff;border:1px solid var(--line);border-radius:12px;padding:22px;font-size:.92rem;line-height:1.65}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+    .pill{display:inline-block;border:1px solid #44607c;border-radius:99px;color:#a5d6ff;padding:3px 10px;margin-right:8px;font-size:.8rem}
+    .note{border-left:3px solid var(--teal);background:#10233a;padding:17px 20px;border-radius:0 10px 10px 0;color:var(--muted)}
+    footer{margin-top:45px;padding:30px 0 50px;border-top:1px solid var(--line);font-size:.87rem;color:var(--muted)}
+    @media(max-width:740px){.grid,.steps{grid-template-columns:1fr}.hero{padding:55px 0 33px}.run{padding:18px}nav{align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#top">EU CN Code Migration API</a>
+      <div class="navlinks"><a href="#features">Features</a><a href="#getting-started">Get started</a><a href="#example">Example</a><a href="#limitations">Disclaimer</a></div>
+    </nav>
+    <header class="hero" id="top">
+      <div class="eyebrow">Trade data · Developer API · 2026–2027</div>
+      <h1>Make EU CN code changes easier to navigate.</h1>
+      <p class="lead">Check 8-digit Combined Nomenclature codes across 2026 and 2027, explore indicative successor candidates, and bring structured migration checks into your customs, ERP, and product-data workflows.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#getting-started">Run in Postman</a>
+        <a class="btn secondary" href="https://rapidapi.com/" target="_blank" rel="noopener noreferrer">Find the API on RapidAPI</a>
+      </div>
+      <span class="pill">2026 → 2027</span><span class="pill">REST · JSON</span><span class="pill">Batch endpoints</span>
+    </header>
+    <main>
+      <section id="features">
+        <h2>Built for classification-change workflows</h2>
+        <p class="sub">Use the API to identify changes needing attention—not to replace professional customs classification decisions.</p>
+        <div class="grid">
+          <article class="card"><h3>Validate CN codes</h3><p>Check whether an 8-digit CN code belongs to the specified annual nomenclature.</p></article>
+          <article class="card"><h3>Review migration candidates</h3><p>Explore candidate successors and identify split or ambiguous code changes requiring manual review.</p></article>
+          <article class="card"><h3>Process codes in batches</h3><p>Integrate multiple checks and migration suggestions into ERP, catalog, and trade-compliance systems.</p></article>
+        </div>
+      </section>
+      <section id="getting-started">
+        <h2>Getting started</h2>
+        <p class="sub">Explore the public collection with Postman. Authentication uses your own RapidAPI subscription and API key.</p>
+        <div class="steps">
+          <div class="card"><div class="number">1</div><h3>Open the collection</h3><p>Use the official Run in Postman button below to fork the collection.</p></div>
+          <div class="card"><div class="number">2</div><h3>Get API access</h3><p>Subscribe to the EU CN Code Migration API on RapidAPI and obtain your own key.</p></div>
+          <div class="card"><div class="number">3</div><h3>Send a request</h3><p>Set your key privately and try GET /v1/versions or a batch migration.</p></div>
+        </div>
+        <div class="run" style="margin-top:24px">
+          <h3>Run EU CN Code Migration API in Postman</h3>
+          <p>Fork the public API collection to explore request examples and documentation.</p>
+          <div class="postman-run-button"
+            data-postman-action="collection/fork"
+            data-postman-visibility="public"
+            data-postman-var-1="60321826-9a9e68d4-5a97-424b-ac66-54b3273a3f6a"
+            data-postman-collection-url="entityId=60321826-9a9e68d4-5a97-424b-ac66-54b3273a3f6a&entityType=collection&workspaceId=fa593695-cdb0-421a-9717-09e6b9f1028c"></div>
+          <script type="text/javascript">
+            (function (p,o,s,t,m,a,n) {
+              !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+              !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+                (n = o.createElement("script")),
+                (n.id = s+t), (n.async = 1), (n.src = m), n
+              ));
+            }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+          </script>
+        </div>
+      </section>
+      <section id="example">
+        <h2>Example: batch migration</h2>
+        <p class="sub">POST <code>/v1/batch/migrate</code> through the RapidAPI gateway:</p>
+        <pre><code>{
+  "codes": ["02013000", "39076100", "76020011"],
+  "from_year": 2026,
+  "to_year": 2027
+}</code></pre>
+        <p class="sub">The API identifies potential splits and ambiguous mappings, returning candidate codes and a manual-review indicator when appropriate.</p>
+        <div class="note"><strong>Authentication:</strong> API calls use <code>x-rapidapi-host: eu-cn-code-migration-api.p.rapidapi.com</code> and your own <code>x-rapidapi-key</code>. Do not place real keys in public collections or repositories.</div>
+      </section>
+      <section id="limitations">
+        <h2>Important disclaimer</h2>
+        <p class="sub">This is an independent, unofficial service. Correspondences are indicative and derived from official EU texts; they are not guaranteed official equivalences. Candidate successors are not automatic customs classifications. Always check the applicable legal nomenclature and obtain expert review where necessary.</p>
+      </section>
+    </main>
+    <footer>EU CN Code Migration API · Independent developer documentation · <a href="https://github.com/HenryCFG/eu-cn-code-migration-api-docs">Source on GitHub</a></footer>
+  </div>
+</body>
+</html>
